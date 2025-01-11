@@ -44,14 +44,14 @@
 </head>
 <body>
     <h1>DIFFICULTY:</h1>
-    <div class="container">
-        <div class="triangle" id="triangle"></div>
-        <div class="option" data-link="https://theyaroxgaming.github.io/404-Error/">EASY</div>
-        <div class="option" data-link="https://theyaroxgaming.github.io/404-Error/">NORMAL</div>
-        <div class="option" data-link="https://theyaroxgaming.github.io/404-Error/">HARD</div>
-        <div class="option" data-link="https://theyaroxgaming.github.io/404-Error/">IMPOSSIBLE</div>
-        <div class="option" data-link="https://theyaroxgaming.github.io/404-Error/">MY LIFE</div>
-    </div>
+   <div class="container">
+    <div class="triangle" id="triangle"></div>
+    <div class="option" data-link="https://theyaroxgaming.github.io/404-Error/" onclick="redirectToLink(this)">EASY</div>
+    <div class="option" data-link="https://theyaroxgaming.github.io/404-Error/" onclick="redirectToLink(this)">NORMAL</div>
+    <div class="option" data-link="https://theyaroxgaming.github.io/404-Error/" onclick="redirectToLink(this)">HARD</div>
+    <div class="option" data-link="https://theyaroxgaming.github.io/404-Error/" onclick="redirectToLink(this)">IMPOSSIBLE</div>
+    <div class="option" data-link="https://theyaroxgaming.github.io/404-Error/" onclick="redirectToLink(this)">MY LIFE</div>
+</div>
 
     <script>
         const triangle = document.getElementById('triangle');
@@ -63,9 +63,10 @@
                 triangle.style.top = `${index * (optionHeight + 20) + optionHeight / 2}px`;
             });
 
-            option.addEventListener('click', () => {
-                const link = option.getAttribute('data-link');
-                window.location.href = link;
+    function redirectToLink(element) {
+        const link = element.getAttribute('data-link');
+        window.location.href = link; // Redirect to the link specified in the data-link attribute
+    }
             });
         });
     </script>
